@@ -15,7 +15,7 @@ def listComp():
     return [x+10 for x in replist]
 
 def mapCall():
-    return list(map(lambda x:x=10,replist))
+    return list(map(lambda x:x+10,replist))
 
 def genExpr():
     return list(x+10 for x in replist)
