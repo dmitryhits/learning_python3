@@ -45,4 +45,4 @@ def bestoftotal(reps1,reps2,func, *pargs, **kargs):
     best of totals
     Best of reps1 runs of (total reps2 runs of func() )
     """
-    return total(reps1,total, reps2, func, *pargs, **kargs)
+    return bestof(reps1,total, reps2, func, *pargs, **kargs)
