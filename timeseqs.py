@@ -39,4 +39,4 @@ print(sys.version)
 for test in (forLoop, listComp, mapCall, genExpr, genFunc):
     (total, result) = timer2.bestoftotal(test, _reps1=5, _reps=1000)
     print('%-9s: %.5f => [%s...%s]' %
-          (test.__name__, bestof, result[0], result[-1]))
+          (test.__name__, total, result[0], result[-1]))
