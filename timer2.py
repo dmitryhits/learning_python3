@@ -26,7 +26,7 @@ def total(func, *pargs, **kargs):
     return (elapsed, result)
 
 def bestof(func, *pargs, **kargs):
-    _reps = kargs.pop('_reps', 1000)
+    _reps = kargs.pop('_reps', 5)
     best = 2*32
     for i in range(_reps):
         start = timer()
@@ -37,4 +37,4 @@ def bestof(func, *pargs, **kargs):
 
 def bestoftotal(func, *pargs, **kargs):
     _reps1 = kargs.pop('_reps1', 5)
-    return min(total(total,func, *pargs, **kargs) for i in range(_reps1))
+    return min(total(func, *pargs, **kargs) for i in range(_reps1))
