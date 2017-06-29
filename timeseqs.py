@@ -1,11 +1,11 @@
 "Test relative speed of iteration tools alternatives"
 
-import sys, timer2
+import sys, timer2, math
 
 reps = 10000
 replist = list(range(reps))
 #test function
-def F(x): return x
+def F(x): return math.sqrt(x)
 
 def forLoop():
     res = []
@@ -31,6 +31,8 @@ def genFunc():
         for x in replist:
             yield F(x)
     return list(gen())
+
+
 
 
 print(sys.version)
