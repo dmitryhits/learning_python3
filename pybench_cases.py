@@ -16,12 +16,12 @@ pythons = [            # (ispy3, path)
 ]
 
 stmts = [ # (num, rpt, stmt)
-    (0, 0, "[x**2 for x in range(1000)]"), #iterations
-    (0, 0, "res = []\nfor x in range(1000): res.append(x**2)"), #multistmt
-    (0, 0, "$listif3(map(lambda x: x**2, range(1000)))"),
-    (0, 0, "list(x**2 for x in range(1000))"),
-    (0, 0, "s = 'spam' * 2500\nx = [s[i] for i in range(10000)]"), #str ops
-    (0, 0, "s = '?'\nfor i in range(10000): s +='?'"),
+   (0, 0, "[x**2 for x in range(1000)]"), #iterations
+   (0, 0, "res = []\nfor x in range(1000): res.append(x**2)"), #multistmt
+   (0, 0, "$listif3(map(lambda x: x**2, range(1000)))"),
+   (0, 0, "list(x**2 for x in range(1000))"),
+   (0, 0, "s = 'spam' * 2500\nx = [s[i] for i in range(10000)]"), #str ops
+   (0, 0, "s = '?'\nfor i in range(10000): s +='?'"),
 ]
 
 tracecmd = '-t' in sys.argv # -t trace command lines
