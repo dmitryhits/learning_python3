@@ -61,8 +61,8 @@ if __name__ == '__main__':
         for test in tests:
             print('%s [%s]' % (money(test, 17), test))
 
-import sys
-if len(sys.argv) == 1:
-    selftest()
-else:
-    print(money(float(sys.argv[1]), int(sys.argv[2])))
+    import sys
+    if len(sys.argv) == 1:
+        selftest()
+    else:
+        print(money(float(sys.argv[1]), int(sys.argv[2])))
