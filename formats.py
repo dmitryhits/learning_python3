@@ -66,7 +66,3 @@ if len(sys.argv) == 1:
     selftest()
 else:
     print(money(float(sys.argv[1]), int(sys.argv[2])))
-
-
-
-    
