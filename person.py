@@ -1,25 +1,34 @@
 # person.py
+"""
+Record and process information about people.
+Run this file directly to test its classes.
+"""
 
-class Person:
+from classtools import AttrDisplay      # generic display tool
+
+
+class Person(AttrDisplay):
+    """
+    Create and process person records
+    """
     def __init__(self, name, job=None, pay=0):
         self.name = name
         self.job = job
         self.pay = pay
 
-    def lastName(self):
+    def lastName(self):                  # Assumes that last is last
         return self.name.split()[-1]
 
-    def giveRaise(self, percent):
+    def giveRaise(self, percent):        # Percent must be between 0...1
         self.pay = int(self.pay*(1+percent))
-
-    def __repr__(self):
-        return '[Person: %s, %s]' % (self.name, self.pay)
 
 
 class Manager(Person):
+    """
+    A customized person with special requirements
+    """
     def __init__(self, name, pay):
-        Person.__init__(self, name, 'mgr', pay)
-
+        Person.__init__(self, name, 'mgr', pay)  # Job name is implied
 
     def giveRaise(self, percent, bonus=0.10):
         Person.giveRaise(self, percent+bonus)
