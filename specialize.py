@@ -4,7 +4,7 @@
 class Super:
     def method(self):
         print('In Super.method')
-    
+
     def delegate(self):
         self.action()
 
