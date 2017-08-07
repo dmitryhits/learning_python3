@@ -1,0 +1,2 @@
+# squares_nonyield.py
+
