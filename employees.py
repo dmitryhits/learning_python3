@@ -1,4 +1,9 @@
 # employees.py
+"""
+A set of classes demonstrating inheritance design method
+ Or 'is a' - relationship
+ A PizzaRobot is a Chef, who is an Employee
+"""
 
 
 class Employee:
