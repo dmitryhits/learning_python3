@@ -13,33 +13,33 @@ import importlib
 def tester(listerclass, sept =False):
 
     class Super:
-        def __init__(self):
-            self.data1 = 'spam'
+        def __init__(self):                                      # Superclass __init__
+            self.data1 = 'spam'                                  # Create instance attrs
 
         def ham(self):
             pass
 
-    class Sub(Super, listerclass):
-        def __init__(self):
+    class Sub(Super, listerclass):                               # Mixing ham and __str__
+        def __init__(self):                                      # Listers have access to self
             Super.__init__(self)
-            self.data2 = 'eggs'
-            self.data2 = 42
+            self.data2 = 'eggs'                                  # More instance attrs
+            self.data3 = 42
 
-        def spam(self):
+        def spam(self):                                          # Define another method here
             pass
 
-    instance = Sub()
-    print(instance)
+    instance = Sub()                                             # Return instance with lister's __str__
+    print(instance)                                              # Run mixed-in __str__ (or via str(x))
     if sept: print('-' * 80)
 
 
 def testByNames(modname, classname, sept=False):
-    modobject = importlib.import_module(modname)
-    listerclass = getattr(modobject, classname)
+    modobject = importlib.import_module(modname)                 # Import by namestring
+    listerclass = getattr(modobject, classname)                   # fetch attrs by namestring
     tester(listerclass, sept)
 
 
 if __name__ == '__main__':
-    testByNames('listinstance', 'ListInstance', True)
+    testByNames('listinstance', 'ListInstance', True)            # Test all here
     #testByNames('listinherited', 'ListInherited', True)
     #testByNames('listtree', 'ListTree', False)
