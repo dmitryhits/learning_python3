@@ -16,7 +16,7 @@ class ListTree:
             if attr.startswith('__') and attr.endswith('__'):
                 result += spaces + '{0}\n'.format(attr)
             else:
-                result += spaces + '{0}={1}\n'.format(attr,getattr(obj,attr))
+                result += spaces + '{0}={1}\n'.format(attr, getattr(obj, attr))
         return result
 
     def __listclass(self, aClass, indent):
@@ -33,9 +33,10 @@ class ListTree:
             above = ''
             for super in aClass.__bases__:
                 above += self.__listclass(super, indent+4)
-            return '\n{0}<Class {1}, address {2}:{3}{4}{5}>\n'.format(
+            return '\n{0}<Class {1}, address {2}:\n{3}{4}{5}>\n'.format(
                 dots,
                 aClass.__name__,
+                id(aClass),
                 here, above,
                 dots
             )
