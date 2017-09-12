@@ -87,5 +87,5 @@ if __name__ == '__main__':
     class C(A): attr1 = 3
     class D(B, C): pass
     I = D()
-    
+
 
