@@ -15,7 +15,7 @@ import pprint
 
 
 def trace(X, label='', end='\n'):
-    pprint(label + pprint.pformat(X) + end)
+    print(label + pprint.pformat(X) + end)
 
 
 def filterdictvals(D,V):
@@ -23,7 +23,7 @@ def filterdictvals(D,V):
     dict D with entries for values V removed.
     filterdictvals(dict(a=1, b=2, c=1)) => {'b':2}
     """
-    return {K: V2 for (K, V2) in D.values() if V2 != V}
+    return {K: V2 for (K, V2) in D.items() if V2 != V}
 
 
 def invertdict(D):
@@ -82,10 +82,17 @@ def mapattrs(instance, withobject = False, bysource = False):
 
 if __name__ == '__main__':
     print('Classic classes in 2.X, new style in 3.X')
+
     class A: attr1 = 1
+
     class B(A): attr2 = 2
+
     class C(A): attr1 = 3
+
     class D(B, C): pass
+
     I = D()
-
-
+    print('Py=>%s' % I.attr1)
+    trace(inheritance(I),               'IHN\n')
+    trace(mapattrs(I),                  'ATTRs\n')
+    trace(mapattrs(I, bysource=True),   'OBJ\n')
